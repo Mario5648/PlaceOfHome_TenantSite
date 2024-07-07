@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="./styles/login_styles.css">
+    <script src="./scripts/captcha.js"></script>
+    <script src="./scripts/users.js"></script>
+    <script src="./scripts/make_calls.js"></script>
+    <script src="./scripts/api_calls.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="./tenantSignInImg.jpg" alt="Houston Image">
+        </div>
+        <div class="form-section">
+            <div class="form-container">
+                <h1>Tenant Portal</h1>
+                <p>We will send you a temporary password if an account matches the given email</p>
+                <br>
+                <div class="formSectionContainer">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
+
+                    <div id="captcha">
+                        <div class="captcha-values-section">
+                            <span id="num1"></span> + <span id="num2"></span> = 
+                        </div>
+                        <label for="captchaInput">Enter Captcha Answer Below:</label>
+                        <input type="text" id="captchaInput" name="captchaInput" required>
+                    </div>
+
+                    <button type="submit" class="signin-btn" onclick="userForgotPassword()">Sign In</button>
+                </div>
+            </div>
+            <br>
+            <p class="signup-link">Don't Have an Account? <a href="./signup_page.html">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>
