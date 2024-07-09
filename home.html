@@ -10,12 +10,15 @@
     <script src="./scripts/api_calls.js"></script>
 </head>
 
-    <body>
+    <body onload="loadPaymentPortalHome()">
         <div class="dashboardContainer">
-            <p id="welcomeText" class="welcomeText">Welcome John!</p>
+            <p id="welcomeText" class="welcomeText">Welcome</p>
 
             <div class="optionMenuSection">
                 <button class="optionButton" onclick="makePayment()">Make Payment</button>
+                <br>
+                <br>
+                <button class="optionButton" onclick="logoutUser()">Logout</button>
             </div>
         </div>
         <div class="poweredByContainer">

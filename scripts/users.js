@@ -219,3 +219,24 @@ function makePayment()
     });
 
 }
+
+function loadPaymentPortalHome()
+{
+    if(localStorage.getItem("POH_TENANT_TOKEN"))
+    {
+        document.getElementById("welcomeText").innerHTML = `Welcome ${localStorage.getItem("POH_TENANT_NAME")} !`;
+    }else
+    {
+        location.href = "./login.html"
+    }
+}
+
+function logoutUser()
+{
+    localStorage.removeItem("POH_TENANT_TOKEN");
+    localStorage.removeItem("POH_TENANT_PROPERTY_ID");
+    localStorage.removeItem("POH_TENANT_EMAIL");
+    localStorage.removeItem("POH_TENANT_NAME");   
+
+    location.href = "./logout.html"
+}

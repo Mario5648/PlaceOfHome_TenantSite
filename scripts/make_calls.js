@@ -14,6 +14,7 @@ function makeCallUserSignup( callBack = null, firstName, email, password )
             localStorage.setItem("POH_TENANT_TOKEN", data["jwt"]);
             localStorage.setItem("POH_TENANT_PROPERTY_ID", data["propertyId"]);
             localStorage.setItem("POH_TENANT_EMAIL", email);
+            localStorage.setItem("POH_TENANT_NAME", firstName);
 
             return callBack(data)
         }
@@ -39,6 +40,8 @@ function makeCallUserLogin( callBack = null, email, password )
             localStorage.setItem("POH_TENANT_TOKEN", data["jwt"]);
             localStorage.setItem("POH_TENANT_PROPERTY_ID", data["propertyId"]);
             localStorage.setItem("POH_TENANT_EMAIL", email);
+            localStorage.setItem("POH_TENANT_NAME", data['firstName']);
+
             return callBack(data)
         }
         else if(data["status"] == "failed")
@@ -82,6 +85,8 @@ function makeCallUpdateUserPassword(callBack = null, email = null, tmpPassword =
             localStorage.setItem("POH_TENANT_TOKEN", data["jwt"]);
             localStorage.setItem("POH_TENANT_PROPERTY_ID", data["propertyId"]);
             localStorage.setItem("POH_TENANT_EMAIL", email);
+            localStorage.setItem("POH_TENANT_NAME", data['firstName']);
+
             return callBack(data);
         }
         else if(data["status"] == "failed")
