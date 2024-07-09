@@ -209,11 +209,16 @@ function verifyUserToken()
 function makePayment()
 {
 
+    document.getElementById("makePaymentButton").disabled = true;
+
     makeUserPayment(function(data)
     {
         if(data['status'] == "success")
         {
             location.href = data["stripePaymentPortalUrl"];
+        }else
+        {
+            document.getElementById("makePaymentButton").disabled = false;
         }
 
     });
