@@ -12,6 +12,9 @@ function makeCallUserSignup( callBack = null, firstName, email, password )
         if(data["status"] == "success")
         {
             localStorage.setItem("POH_TENANT_TOKEN", data["jwt"]);
+            localStorage.setItem("POH_TENANT_PROPERTY_ID", data["propertyId"]);
+            localStorage.setItem("POH_TENANT_EMAIL", email);
+
             return callBack(data)
         }
         else if(data["status"] == "failed")
@@ -34,6 +37,8 @@ function makeCallUserLogin( callBack = null, email, password )
         if(data["status"] == "success")
         {
             localStorage.setItem("POH_TENANT_TOKEN", data["jwt"]);
+            localStorage.setItem("POH_TENANT_PROPERTY_ID", data["propertyId"]);
+            localStorage.setItem("POH_TENANT_EMAIL", email);
             return callBack(data)
         }
         else if(data["status"] == "failed")
@@ -75,11 +80,33 @@ function makeCallUpdateUserPassword(callBack = null, email = null, tmpPassword =
         if(data["status"] == "success")
         {
             localStorage.setItem("POH_TENANT_TOKEN", data["jwt"]);
+            localStorage.setItem("POH_TENANT_PROPERTY_ID", data["propertyId"]);
+            localStorage.setItem("POH_TENANT_EMAIL", email);
             return callBack(data);
         }
         else if(data["status"] == "failed")
         {
             alert("Failed to update password! Please try Again.");
+        }
+    });
+}
+
+function makeUserPayment (callBack = null)
+{
+    let params = {
+        "email":localStorage.getItem("POH_TENANT_EMAIL"),
+        "propertyId":localStorage.getItem("POH_TENANT_PROPERTY_ID"),
+       };
+
+    endpointCall("makePayment", params, function(data)
+    {
+        if(data["status"] == "success")
+        {
+            return callBack(data);
+        }
+        else if(data["status"] == "failed")
+        {
+            alert("Failed retrieve payment link. Please try again or contact your rent provider.");
         }
     });
 }

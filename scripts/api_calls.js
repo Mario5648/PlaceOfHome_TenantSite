@@ -1,10 +1,11 @@
 
 var ERROR_FLAG = "ERROR";
 
-var userSignupEndPoint = "http://127.0.0.1:5000/signup";
-var userLoginEndPoint = "http://127.0.0.1:5000/login";
-var userForgotPasswordEndPoint = "http://127.0.0.1:5000/forgot";
-var userUpdatePasswordEndPoint = "http://127.0.0.1:5000/updatePasswordWithTemp";
+var userSignupEndPoint = "http://127.0.0.1:4242/signup";
+var userLoginEndPoint = "http://127.0.0.1:4242/login";
+var userForgotPasswordEndPoint = "http://127.0.0.1:4242/forgot";
+var userUpdatePasswordEndPoint = "http://127.0.0.1:4242/updatePasswordWithTemp";
+var makePaymentEndPoint = "http://127.0.0.1:4242/makePayment"
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
@@ -41,5 +42,7 @@ function identifyEndPoint(endpoint=null)
             return userForgotPasswordEndPoint;
         case "userUpdatePassword":
             return userUpdatePasswordEndPoint;
+        case "makePayment":
+            return makePaymentEndPoint;
     }
 }

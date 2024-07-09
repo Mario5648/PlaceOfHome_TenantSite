@@ -204,3 +204,18 @@ function verifyUserToken()
         location.href = "./login.html"
     }
 }
+
+
+function makePayment()
+{
+
+    makeUserPayment(function(data)
+    {
+        if(data['status'] == "success")
+        {
+            location.href = data["stripePaymentPortalUrl"];
+        }
+
+    });
+
+}

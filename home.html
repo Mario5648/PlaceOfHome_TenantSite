@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="./styles/tenant_portal.css">
+    <script src="./scripts/users.js"></script>
+    <script src="./scripts/make_calls.js"></script>
+    <script src="./scripts/api_calls.js"></script>
 </head>
 
     <body>
         <div class="dashboardContainer">
-            <p class="welcomeText">Welcome John!</p>
+            <p id="welcomeText" class="welcomeText">Welcome John!</p>
 
             <div class="optionMenuSection">
-                <button class="optionButton">Make Payment</button>
+                <button class="optionButton" onclick="makePayment()">Make Payment</button>
             </div>
         </div>
         <div class="poweredByContainer">
