@@ -1,11 +1,11 @@
 
 var ERROR_FLAG = "ERROR";
 
-var userSignupEndPoint = "http://127.0.0.1:4242/signup";
-var userLoginEndPoint = "http://127.0.0.1:4242/login";
-var userForgotPasswordEndPoint = "http://127.0.0.1:4242/forgot";
-var userUpdatePasswordEndPoint = "http://127.0.0.1:4242/updatePasswordWithTemp";
-var makePaymentEndPoint = "http://127.0.0.1:4242/makePayment"
+var userSignupEndPoint = "https://poh-tenant-api.com/signup";
+var userLoginEndPoint = "https://poh-tenant-api.com/login";
+var userForgotPasswordEndPoint = "https://poh-tenant-api.com/forgot";
+var userUpdatePasswordEndPoint = "https://poh-tenant-api.com/updatePasswordWithTemp";
+var makePaymentEndPoint = "https://poh-tenant-api.com/makePayment"
 
 function endpointCall(endpoint=null, params={}, callBack=null)
 {
